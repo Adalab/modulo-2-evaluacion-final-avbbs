@@ -1,5 +1,5 @@
 .header {
-  height: 45vh;
+  height: 39.5vh;
   width: 100vw;
   background-image: url(../images/img6.PNG);
   background-size: cover;
@@ -24,11 +24,17 @@
     font-family: $font-main;
   }
   .form__btn {
+    font-weight: bold;
     font-size: 12px;
     margin-left: 1em;
+    padding: 1em;
     background-color: $color-details;
     color: $main-color;
-    border: none;
+    border-style: hidden;
+    border-radius: 70%;
     font-family: $font-main;
+    letter-spacing: 1.2px;
+    
+
   }
 }
