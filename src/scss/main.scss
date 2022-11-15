@@ -1,0 +1,21 @@
+@import 'core/variables';
+@import 'core/reset';
+@import 'core/functions';
+@import 'layout/header';
+@import 'layout/section-characters.scss';
+@import 'layout/section-favorites.scss';
+@import 'layout/footer';
+
+* {
+    box-sizing: border-box;
+}
+
+.main{
+padding-top: 7em;
+margin-bottom: 4em;
+display: grid;
+grid-template-columns: 1fr 2fr;
+grid-template-rows: auto;
+
+}
+

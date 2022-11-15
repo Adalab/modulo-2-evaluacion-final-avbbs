@@ -1,0 +1,16 @@
+.section-favorites{
+width: 30vw;
+&__title{
+text-align: center;
+font-family: $font-main;
+font-weight: bold;
+font-size: 16px;
+color: $color-details;
+margin-bottom: 2em;
+&--icon{
+    color: $color-details;  
+    padding-left: 0.3em; 
+}
+}
+}
+
