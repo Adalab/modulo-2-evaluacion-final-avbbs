@@ -11,9 +11,9 @@ const btnReset = document.querySelector(".js-reset-btn");
 
 //VARIABLES GLOBALES
 
-let allCharacters = [];
+let allCharacters = [];//Variable en la que guardo listado de personajes
 
-let favorites = [];
+let favorites = [];//Variable en la que guardo listado de personajes favoritos
 
 //FUNCIONES
 function renderArticle(character) {
@@ -34,8 +34,11 @@ function renderArticle(character) {
   <h3 class="article__title">${character.name}</h3>
   <p class="article__text">${character.status}</p>
 </article>`;
-}
-
+}//Función para pintar un personaje(con parámetro)
+//Variable que guarda método funcional de búsqueda en listado favoritos que devuelve el índice donde se encuentra el personaje buscado dada la condición de que su id coincida
+//Variable local vacía
+//Condicional: Si en la constante(en la que estoy guardando la comparación por id) no existe elemento, la variable local no guardará valor y si existe elemento, la variable local pondrá la clase de resaltar personaje
+//Esta función devuelve artículo del HTML de cada personaje con interpolación de parámetro de esta función y los datos cogidos del API 
 function renderAllArticles(character) {
   let html = "";
   for (let i = 0; i < character.length; i++) {
@@ -43,7 +46,12 @@ function renderAllArticles(character) {
   }
   charactersList.innerHTML = html;
   listenerClickArticle();
-}
+}//Función para pintar todo el listado de personajes(con el mismo parámetro de la función anterior)
+//Creo variable local vacía
+//Realizo bucle para recorrer la longitud del array con el listado de personajes en cada objeto
+//Cada vez debe guardar en la variable html la función de pintar ese personaje con ese índice concreto
+//Pinto contenido de la variable html en la ul de section-characters del HTML
+//Llamo a la función para poner el evento click en cada personaje
 
 function renderFavoritesArticles() {
   let html = "";
@@ -51,14 +59,20 @@ function renderFavoritesArticles() {
     html += renderArticle(favorites[i]);
   }
   favoritesList.innerHTML = html;
-}
+}//Función para pintar todo el listado de personajes favoritos
+//Creo variable local vacía
+//Realizo bucle para recorrer la longitud del array con el listado de favoritos
+//Cada vez debe guardar en la variable html la función de pintar ese personaje con ese índice concreto
+//Pinto contenido de la variable html en la ul de section-favorites del HTML
 
 function listenerClickArticle() {
   const allArticles = document.querySelectorAll(".js-article");
   for (const eachArticle of allArticles) {
     eachArticle.addEventListener("click", handleClickCharacters);
   }
-}
+}//Función para poner el evento click en cada personaje
+//Traigo todos los artículos del listado de personajes
+//Realizo bucle para que al recorrer el listado de artículos, en cada uno, añada un evento click
 
 function handleClickCharacters(event) {
   event.currentTarget.classList.toggle("select-character");
@@ -82,7 +96,13 @@ function handleClickCharacters(event) {
   }
 
   renderFavoritesArticles();
-}
+}// Función manejadora:
+//Pone/Quita la clase de resaltar 
+//Creo variable local en la que guardo el método funcional de búsqueda de cada objeto del listado de personajes cuyo id de la API sea igual que el id del objeto del listado de personajes
+//Creo otra variable local en la que guardo el método funcional de búsqueda de cada índice del objeto cuyo id de la API sea igual que el id del objeto del listado de favoritos
+//Condicional: Si en la variable donde guardo la búsqueda de cada índice del objeto cuyo id de la API sea igual que el id del objeto del listado de favoritos, no hay nada, entonces agrego elemento al listado de favoritos con la clase de resaltar
+//A su vez, guardo en el localstorage, en texto plano, el elemento favorito agregado
+//Condicional:
 
 //EVENTOS
 

@@ -1,6 +1,6 @@
 .header {
   height: 39.5vh;
-  width: 100vw;
+  width: 100%;
   background-image: url(../images/img7.JPG);
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     padding: 1.3em;
-    width: 80%;
+    width: 80vw;
      box-shadow: 0px 0px 8px 1px rgb(201, 182, 182);
     transform: translateY(50%);
   }
